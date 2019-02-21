@@ -20,7 +20,7 @@ public class UserEntity {
      
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int iduser;
+    private Integer iduser;
     
     @Column(name="nome")
     private String nome;

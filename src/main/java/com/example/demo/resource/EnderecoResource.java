@@ -26,7 +26,12 @@ public class EnderecoResource {
         this.repository.findAll().forEach(u -> {
             System.out.println(u);
         });
-    } 
+    }     
+    
+    public void cadastrarEndereco(UserEntity user,EnderecoEntity endereco){
+        endereco.setIduser(user.getIduser());
+        repository.save(endereco);        
+    }
    
     
 }

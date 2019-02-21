@@ -21,33 +21,15 @@ public class UsersResource {
 
     @Autowired
     private UsersRepository repository;
-    
-    @Autowired
-    private EnderecoRepository endrepository;
-    
-    UserEntity u = new UserEntity();
 
+   
     public void listarUsuarios() {
         this.repository.findAll().forEach(u -> {
             System.out.println(u);
         });
     }
 
-    public void cadastrarUsuario(String nome, String email) {
-        u.setNome(nome);
-        u.setEmail(email);
-        repository.save(u);
+    public void cadastrarUsuario(UserEntity user) {
+        repository.save(user);
     }
-
-    public void cadastrarEndereco(String rua, String bairro, String cidade, String estado){
-        EnderecoEntity e = new EnderecoEntity();
-        e.setRua(rua);
-        e.setBairro(bairro);
-        e.setCidade(cidade);
-        e.setEstado(estado);
-        e.setIduser_fk(u.getIduser());
-                
-        endrepository.save(e);        
-    }
-
 }

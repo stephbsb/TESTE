@@ -20,7 +20,7 @@ public class EnderecoEntity {
      
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idendereco;
+    private Integer idendereco;
     
     @Column(name="rua")
     private String rua;
@@ -35,6 +35,6 @@ public class EnderecoEntity {
     private String estado; 
     
     @Column(name="iduser")
-    private int iduser_fk;
+    private Integer iduser;
     
 }
